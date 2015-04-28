@@ -1,3 +1,4 @@
 [
-  "jquery/dist/jquery.js"
+  "jquery/dist/jquery.js",
+  "slick.js/slick/slick.min.js"
 ]
