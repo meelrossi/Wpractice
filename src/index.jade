@@ -32,7 +32,7 @@ html(lang='en')
               a(class='header-link portfolio-link' href="#")
                 | PORTFOLIO
             li
-              a(class='header-link single-link' href="#")
+              a(class='header-link single-link contact-link' href="#")
                 | CONTACT
           ul(id='portfolios-list' class='nav navbar-nav portfolios portfolios--hidden')
             li
@@ -58,14 +58,23 @@ html(lang='en')
       div(class='image-bg objects')
       div(class='image-bg landscapes')
       div(class='image-bg skyes')
-    div(class='about about--hidden')
-      div(class='about-info')
-        h1(class='about-title')
+    div(class='section section--hidden about')
+      div(class='section-info')
+        h1(class='section-title')
           | About Me
         h5(class='about-text')
           | Action is eloquence. The only thing worth saying is what you really feel. They are composed like music. guided by his sense of beauty, and individual transforms a fortuitous occurrence (beethoven’s music, death under a train) into a motif, which then assumes a permanent place in the composition of the individual’s life. Anna could have chosen another life.
         h5(class='about-text')
           | All humanity is passion; without passion, religion, history, novels, art would be ineffectual. perfection is terrible; it cannot have children. i preach there are all kinds of truths, your truth and somebody else’s. But behind all of them there is only one truth and that is that there’s no truth. To love another person is to see the face of god.
+    div(class='section section--hidden contact')
+      div(class='section-info')
+        h1(class='section-title')
+          | Contact Me
+        form
+          input(class='contact-input' type='email' placeholder='Mail')
+          input(class='contact-input' type='text' placeholder='Subject')
+          textarea(class='contact-input' type='text' placeholder='Content' rows='5')
+          input(class='contact-send-button' type='submit' value='Send')
     div(id='footer' class='footer')
       div(class='copyright')
         p
