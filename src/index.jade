@@ -2,6 +2,7 @@ doctype html
 html(lang='en')
   head
     link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    link(rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Montserrat')
     link(href='css/vendor.css', rel='stylesheet')
     link(href='css/app.min.css', rel='stylesheet')
     meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -22,13 +23,13 @@ html(lang='en')
         div(id='navbar-brand-centered' class='collapse navbar-collapse')
           ul(class='nav navbar-nav principal-menu')
             li
-              a(class='header-link single-link' href="#")
+              a(class='header-link single-link home-link' href="#")
                 | HOME
             li
-              a(class='header-link single-link' href="#")
+              a(class='header-link single-link about-link' href="#")
                 | ABOUT
             li
-              a(class='header-link portfolio' href="#")
+              a(class='header-link portfolio-link' href="#")
                 | PORTFOLIO
             li
               a(class='header-link single-link' href="#")
@@ -45,18 +46,26 @@ html(lang='en')
                 | PORTFOLIO3
           ul(class='nav navbar-nav navbar-right logos')
             li
-              img(class='social-logo' src='images/facebook.png' alt='facebook')
+              img(class='social-logo facebook' src='images/facebook.png' alt='facebook')
             li
-              img(class='social-logo' src='images/twitter.png' alt='twitter')
+              img(class='social-logo twitter' src='images/twitter.png' alt='twitter')
             li
-              img(class='social-logo' src='images/pinterest.png' alt='pinterest')
+              img(class='social-logo pinterest' src='images/pinterest.png' alt='pinterest')
     div(class='principal-images')
-        img(class='image' src='images/animals.jpg' alt='animals')
-        img(class='image' src='images/people2.jpg' alt='people2')
-        img(class='image' src='images/nature.jpg' alt='nature')
-        img(class='image' src='images/objects.jpg' alt='objects')
-        img(class='image' src='images/landscapes.jpg' alt='landscapes')
-        img(class='image' src='images/skyes.jpg' alt='skyes')
+      div(class='image-bg animals')
+      div(class='image-bg people2')
+      div(class='image-bg nature')
+      div(class='image-bg objects')
+      div(class='image-bg landscapes')
+      div(class='image-bg skyes')
+    div(class='about about--hidden')
+      div(class='about-info')
+        h1(class='about-title')
+          | About Me
+        h5(class='about-text')
+          | Action is eloquence. The only thing worth saying is what you really feel. They are composed like music. guided by his sense of beauty, and individual transforms a fortuitous occurrence (beethoven’s music, death under a train) into a motif, which then assumes a permanent place in the composition of the individual’s life. Anna could have chosen another life.
+        h5(class='about-text')
+          | All humanity is passion; without passion, religion, history, novels, art would be ineffectual. perfection is terrible; it cannot have children. i preach there are all kinds of truths, your truth and somebody else’s. But behind all of them there is only one truth and that is that there’s no truth. To love another person is to see the face of god.
     div(id='footer' class='footer')
       div(class='copyright')
         p
@@ -64,15 +73,14 @@ html(lang='en')
           span(class='glyphicon glyphicon-copyright-mark' aria-hidden='true')
           | 2014 Andy Parker
       div(class='buttons')
-        button(class='principal-button full-screen')
+        button(class='footer-button full-screen')
           span(class='glyphicon glyphicon-resize-vertical')
-        button(class='principal-button pause')
+        button(class='footer-button pause')
           span(id='play-pause' class='glyphicon glyphicon-pause')
-        button(class='principal-button next')
+        button(class='footer-button next')
           span(class='glyphicon glyphicon-arrow-left')
-        button(class='principal-button previous')
+        button(class='footer-button previous')
           span(class='glyphicon glyphicon-arrow-right')
-
     script(type='text/javascript' src='//code.jquery.com/jquery-1.11.0.min.js')
     script(type='text/javascript' src='//code.jquery.com/jquery-migrate-1.2.1.min.js')
     script(src='js/libs.min.js')

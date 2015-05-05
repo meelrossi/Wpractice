@@ -1,11 +1,20 @@
 @import 'colors';
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: @white;
+  height: 100%;
+  font-family: 'Montserrat', serif;
 }
+
+/* Header - Navbar */
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:focus, .header-link:hover {
   color: @green;
+  text-decoration: underline;
 }
 
 .navbar-nav > li > a.header-link {
@@ -14,16 +23,7 @@ body {
 }
 
 ul.navbar-nav.principal-menu {
-  text-align: left;
   width: 100px;
-}
-
-.header-link {
-  color: @grey;
-}
-
-.container {
-  width: 100%;
 }
 
 .navbar.nav-header {
@@ -31,56 +31,131 @@ ul.navbar-nav.principal-menu {
   opacity: 1;
 }
 
-.portfolios {
-  width: 150px;
-  position: absolute;
-  left: 150px;
-  height: 175px;
-  background-color: @light-green;
-  top: 55px;
+.navbar-brand-centered {
+  width: 250px;
+  text-align: center;
+  letter-spacing: 6px;
+  color: @black;
+  h6 {
+    font-size: 8px;
+  }
+  h4 {
+    font-size: 21px;
+  }
+  &:hover {
+    color: @grey;
+  }
 }
 
-.portfolios--hidden, .navbar-header--hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+.navbar {
+  margin-bottom: 0;
+  border: 0;
+}
 
+.container {
+  width: 100%;
+}
+
+/*Header - Links and Logos*/
+
+.header-link {
+  color: @grey;
 }
 
 .social-logo {
   margin: 0 5px;
   height: auto;
   max-width: 30px;
-}
-
-.navbar-brand-centered {
-  text-align: center;
+  float: right;
   &:hover {
-    color: @grey;
+    opacity: 0.5;
   }
 }
 
-.image {
-  height: auto;
-  max-width: 100%;
+.portfolios {
+  width: 150px;
+  height: 175px;
+  position: absolute;
+  top: 55px;
+  left: 150px;
+  background-color: @light-green;
+}
+
+/*Image Background*/
+
+.slick-list, .slick-track {
+  height: 100%;
+}
+
+.image-bg {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  &.animals {
+      background-image: url('../images/animals.jpg');
+  }
+  &.people2 {
+      background-image: url('../images/people2.jpg');
+  }
+  &.nature {
+      background-image: url('../images/nature.jpg');
+  }
+  &.objects {
+      background-image: url('../images/objects.jpg');
+  }
+  &.landscapes {
+      background-image: url('../images/landscapes.jpg');
+  }
+  &.skyes {
+      background-image: url('../images/skyes.jpg');
+  }
 }
 
 .principal-images {
   width: 100%;
   height: 100%;
-  top: 150px;
-  margin: 0 auto;
   position: fixed;
+  top: 0;
   z-index: -1;
 }
 
+/*About*/
+
+.about {
+  height: calc(~"100% - 110px");
+  top: 60px;
+  overflow: auto;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.about-title {
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+.about-info {
+  width: 90%;
+  padding: 60px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/*Footer*/
+
 .footer {
-  background: @white;
+  width: 100%;
   position: fixed;
   bottom: 0;
-  width: 100%;
   padding: 10px;
   color: @grey;
+  background: @white;
   transition: background 0.5s;
   &.footer-full-screen {
     background: transparent;
@@ -88,15 +163,17 @@ ul.navbar-nav.principal-menu {
   }
 }
 
-.principal-button {
-  border-radius: 100%;
+.footer-button {
   border: solid 1px @grey;
+  border-radius: 100%;
   background: transparent;
-}
-
-.principal-button:hover {
-  border: 0;
-  background-color: @light-grey;
+  &:hover {
+    border-color: @light-grey;
+    background-color: @light-grey;
+  }
+  &:focus {
+    outline: 0;
+  }
 }
 
 .buttons {
@@ -106,47 +183,75 @@ ul.navbar-nav.principal-menu {
 
 .copyright {
   float: left;
-  width: 200px;
+  width: 250px;
 }
 
 p span.glyphicon.glyphicon-copyright-mark {
   margin: 0 5px;
 }
 
+/*Hidden elements*/
+
+.portfolios--hidden, .navbar-header--hidden, .about--hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+
+/*CSS Screen over 768px*/
+
 @media screen and (min-width:768px) {
   .navbar-brand-centered {
+      width: 250px;
       display: block;
-      width: 160px;
-      left: 50%;
-      text-align: center;
       position: absolute;
+      left: 50%;
       top: 50%;
       transform: translateY(-50%);
+      text-align: center;
+      color: @black;
   }
 
   .navbar > .container .navbar-brand-centered,
   .navbar > .container-fluid .navbar-brand-centered {
-      margin-left: -80px;
+      margin-left: -125px;
+  }
+
+  ul.navbar-nav.logos {
+    display: inline;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
   }
 
   .portfolios {
     width: 150px;
+    height: 160px;
     position: absolute;
     left: 150px;
-    height: 100%;
+    top: 0;
     background-color: @light-green;
-    top: 0;
   }
 
-  ul.navbar-nav.logos {
-    right: 30px;
-    position: absolute;
-    bottom: 20px;
-    display: inline;
+  .about {
+    height: calc(~"100% - 210px");
+    top: 160px;
   }
 
-  .principal-images {
-    top: 0;
+  .about-title {
+    font-size: 80px;
+    text-decoration: underline;
+  }
+
+  .about-info {
+    width: 600px;
+    padding: 100px 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 20px;
+    margin: 40px 0;
   }
 }
-

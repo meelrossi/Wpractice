@@ -7,7 +7,7 @@ $(document).ready ->
     autoplay: true
     cssEase: 'linear'
 
-  $('.header-link.portfolio').mouseover ->
+  $('.header-link.portfolio-link').mouseover ->
     $('#portfolios-list').removeClass('portfolios--hidden')
     return
 
@@ -22,6 +22,7 @@ $(document).ready ->
   $('.full-screen').click ->
     $('#header').toggleClass('navbar-header--hidden')
     $('#footer').toggleClass('footer-full-screen')
+    $('.about').addClass('about--hidden')
     return
 
   $('.next').click ->
@@ -41,4 +42,12 @@ $(document).ready ->
       $('.principal-images').slick('slickPlay')
       $('#play-pause').removeClass('glyphicon-play');
       $('#play-pause').addClass('glyphicon-pause');
+    return
+
+  $('.about-link').click ->
+    $('.about').removeClass('about--hidden')
+    return
+
+  $('.home-link, .portfolio-link').click ->
+    $('.about').addClass('about--hidden')
     return
