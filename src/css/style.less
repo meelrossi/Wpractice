@@ -121,21 +121,21 @@ ul.navbar-nav.principal-menu {
   z-index: -1;
 }
 
-/*About*/
+/*Section*/
 
-.about {
+.section {
   height: calc(~"100% - 110px");
   top: 60px;
   overflow: auto;
   background: rgba(255, 255, 255, 0.8);
 }
 
-.about-title {
+.section-title {
   font-size: 40px;
   text-decoration: underline;
 }
 
-.about-info {
+.section-info {
   width: 90%;
   padding: 60px 0;
   margin: 0 auto;
@@ -145,6 +145,21 @@ ul.navbar-nav.principal-menu {
 .about-text {
   font-size: 18px;
   margin: 10px 0;
+}
+
+.contact-send-button {
+  border: solid 1px @grey;
+  background: transparent;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.contact-input {
+  width: 100%;
+  margin: 30px 0;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px @white;
 }
 
 /*Footer*/
@@ -192,10 +207,14 @@ p span.glyphicon.glyphicon-copyright-mark {
 
 /*Hidden elements*/
 
-.portfolios--hidden, .navbar-header--hidden, .about--hidden {
+.portfolios--hidden, .navbar-header--hidden {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+
+.section--hidden {
+  display: none;
 }
 
 /*CSS Screen over 768px*/
@@ -233,17 +252,17 @@ p span.glyphicon.glyphicon-copyright-mark {
     background-color: @light-green;
   }
 
-  .about {
+  .section {
     height: calc(~"100% - 210px");
     top: 160px;
   }
 
-  .about-title {
+  .section-title {
     font-size: 80px;
     text-decoration: underline;
   }
 
-  .about-info {
+  .section-info {
     width: 600px;
     padding: 100px 0;
     margin: 0 auto;

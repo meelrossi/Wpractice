@@ -22,7 +22,8 @@ $(document).ready ->
   $('.full-screen').click ->
     $('#header').toggleClass('navbar-header--hidden')
     $('#footer').toggleClass('footer-full-screen')
-    $('.about').addClass('about--hidden')
+    $('.about').addClass('section--hidden')
+    $('.contact').addClass('section--hidden')
     return
 
   $('.next').click ->
@@ -36,18 +37,24 @@ $(document).ready ->
   $('.pause').click ->
     if($('#play-pause').hasClass('glyphicon-pause'))
       $('.principal-images').slick('slickPause')
-      $('#play-pause').removeClass('glyphicon-pause');
-      $('#play-pause').addClass('glyphicon-play');
+      $('#play-pause').removeClass('glyphicon-pause')
+      $('#play-pause').addClass('glyphicon-play')
     else
       $('.principal-images').slick('slickPlay')
-      $('#play-pause').removeClass('glyphicon-play');
-      $('#play-pause').addClass('glyphicon-pause');
+      $('#play-pause').removeClass('glyphicon-play')
+      $('#play-pause').addClass('glyphicon-pause')
     return
 
   $('.about-link').click ->
-    $('.about').removeClass('about--hidden')
+    $('.contact').addClass('section--hidden')
+    $('.about').removeClass('section--hidden')
     return
 
   $('.home-link, .portfolio-link').click ->
-    $('.about').addClass('about--hidden')
+    $('.about, .contact').addClass('section--hidden')
+    return
+
+  $('.contact-link').click ->
+    $('.about').addClass('section--hidden')
+    $('.contact').removeClass('section--hidden')
     return
